@@ -14,3 +14,7 @@
 ```
 create view articleHits as select title,author,count(path) as hits from articles,log where slug=substr(path, 10) group by articles.title,articles.author order by hits desc;
 ```
+### Running the script :
+* Run `vagrant up`
+* Run `Vagrant ssh`
+* Run `python2 logparser.py`
