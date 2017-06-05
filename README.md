@@ -7,3 +7,10 @@
   *  [Python2](https://www.python.org/)
   *  [Vagrant](https://www.vagrantup.com/)
   *  [VirtualBox](https://www.virtualbox.org/)
+
+### Views Created :
+
+#### ArticleHits:
+```
+create view articleHits as select title,author,count(path) as hits from articles,log where slug=substr(path, 10) group by articles.title,articles.author order by hits desc;
+```
