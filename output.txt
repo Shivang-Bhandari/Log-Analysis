@@ -1,0 +1,12 @@
+vagrant@vagrant:/vagrant$ python logparser.py
+The Top 3 Articles are : 
+	~ Candidate is jerk, alleges rival => 338647 hits
+	~ Bears love berries, alleges bear => 253801 hits
+	~ Bad things gone, say good people => 170098 hits
+Top Authors are :
+	~ Ursula La Multa => 507594 hits
+	~ Rudolf von Treppenwitz => 423457 hits
+	~ Anonymous Contributor => 170098 hits
+	~ Markoff Chaney => 84557 hits
+Days with more than 1 percent error are :
+	~ 2016-07-17 => 2.26 %
