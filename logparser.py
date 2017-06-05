@@ -2,7 +2,8 @@
 
 import psycopg2
 
-queries=["select title,hits from articleHits limit 3"]
+queries=["select title,hits from articleHits limit 3",
+        "select name,sum(articleHits.hits) as num from authors, articleHits where authors.id = articleHits.author group by name order by num desc;"]
 
 def dbConnect():
 
@@ -21,7 +22,6 @@ def dbConnect():
 def parseLog(query):
     dbCursor.execute(query)
     parsedData = dbCursor.fetchall()
-    database.close()
     return parsedData
 
 def dataOutput(parsedData):
@@ -32,7 +32,17 @@ def dataOutput(parsedData):
 
 # connection call to DB
 dbConnect()
-query1 = dict()
-query1['title']="The Top 3 Articles are :"
-query1['data']=parseLog(queries[0])
-dataOutput(query1)
+# fetches top articles
+topArticles = {'title':"The Top 3 Articles are :", 'data':parseLog(queries[0])}
+
+# fetches top authors
+topAuthors = {'title':"Top Authors are :", 'data':parseLog(queries[1])}
+
+# fetches error days
+# errorDays = {'title':"Days with more than 1 percent error are :", 'data':parseLog(queries[2])}
+
+# Output on
+dataOutput(topArticles)
+dataOutput(topAuthors)
+# dataOutput(errorDays)
+database.close()
