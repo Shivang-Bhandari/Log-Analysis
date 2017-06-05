@@ -19,7 +19,7 @@ create view articleHits as select title,author,count(path) as hits from articles
 
 ##### Firing up the VM :
 * Run `vagrant up`
-* Run `Vagrant ssh`
+* Run `vagrant ssh`
 
 ##### Running queries on DB :
 * Change directory using `cd /vagrant`
