@@ -62,13 +62,19 @@ def dataOutputError(parsedData):
 dbConnect()
 
 # fetches top articles
-topArticles = {'title': "The Top 3 Articles are : ", 'data': parseLog(queries[0])}
+topArticles = {
+               'title': "The Top 3 Articles are : ",
+               'data': parseLog(queries[0])
+              }
 
 # fetches top authors
 topAuthors = {'title': "Top Authors are :", 'data': parseLog(queries[1])}
 
 # fetches error days
-errorDays = {'title': "Days with more than 1 percent error are :", 'data': parseLog(queries[2])}
+errorDays = {
+           'title': "Days with more than 1 percent error are :",
+           'data': parseLog(queries[2])
+           }
 
 # Output
 dataOutput(topArticles)
